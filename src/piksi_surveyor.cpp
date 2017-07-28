@@ -37,7 +37,7 @@ void gps_callback(const sensor_msgs::NavSatFix  msg)
 	time_gps_sec = msg.header.stamp.sec;
 	time_gps_nsec = msg.header.stamp.nsec;
 
-	//Accumalators
+	//Accumulators
 	lat_acm = lat_acm + msg.latitude;
 	lon_acm = lon_acm + msg.longitude;
 	alt_acm = alt_acm + msg.altitude;
@@ -75,7 +75,7 @@ void gpsrtk_callback(const nav_msgs::Odometry msg)
 	time_gpsrtk_sec = msg.header.stamp.sec;
 	time_gpsrtk_nsec = msg.header.stamp.nsec;
 
-	//Accumalators
+	//Accumulators
 	east_acm = east_acm + msg.pose.pose.position.x;
 	north_acm = north_acm + msg.pose.pose.position.y;
 	up_acm = up_acm + msg.pose.pose.position.z;
@@ -96,17 +96,6 @@ void gpsrtk_callback(const nav_msgs::Odometry msg)
 
 }
 
-// void gpstime_callback(const sensor_msgs::TimeReference msg)
-// {
-// 	//ROS_INFO("I heard: x = [%f], y = [%f] ", msg.x, msg.y);
-// 	for(int i = 0; i < 23; i++){
-
-// 		tx[i] = msg->x[i];
-// 		ty[i] = msg->y[i];
-// 		tpoints[i] = msg->Points[i];
-// 		served[i] = msg->Served[i];
-// 	}
-// }
 
 
 int main(int argc, char **argv)
@@ -118,30 +107,14 @@ int main(int argc, char **argv)
 
 	ros::Subscriber sub_gps = n.subscribe("gps/fix", 1, gps_callback);
 	ros::Subscriber sub_gpsrtk = n.subscribe("gps/rtkfix", 1, gpsrtk_callback);
-	// ros::Subscriber sub_gpstime = n.subscribe("gps/time", 1, gpstime_callback);
-	
-	//ros::Publisher pub = n.advertise<governor::assignment>("assignment", 100);
-	
-	//ros::Publisher pubhex0 = n.advertise<geometry_msgs::Pose>("/hexacopter0/uav_control/waypoint", 100);
-
 
 	ros::Rate loop_rate(10);
 
-	
-	
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	int loopcount = 0;
 
-	while(ros::ok()){
-		
-		// ROS_INFO("[%d] Mississippi.", loopcount);
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 
-		// geometry_msgs::Pose UAV2set;
-		// UAV2set.position.x = tx[vassign[2]];
-		// UAV2set.position.y = ty[vassign[2]];
-		// UAV2set.position.z = 7;
-		// UAV2set.orientation.w = 1;
-		// pubhex2.publish(UAV2set);
+	while(ros::ok()){
 	
 		loopcount++;
 		ros::spinOnce();   	    
