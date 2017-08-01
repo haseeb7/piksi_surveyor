@@ -21,7 +21,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   geometry_msgs
-  swiftnav_piksi
 )
 
 ## System dependencies are found with CMake's conventions
@@ -116,7 +115,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES piksi_surveyor
-#  CATKIN_DEPENDS diagnostics_msgs nav_msgs roscpp rospy std_msgs swiftnav_piksi
+#  CATKIN_DEPENDS diagnostics_msgs nav_msgs roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 

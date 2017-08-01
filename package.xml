@@ -46,7 +46,6 @@
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>swiftnav_piksi</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <run_depend>diagnostic_msgs</run_depend>
   <run_depend>nav_msgs</run_depend>
@@ -54,7 +53,6 @@
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
-  <run_depend>swiftnav_piksi</run_depend>
   <run_depend>sensor_msgs</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
